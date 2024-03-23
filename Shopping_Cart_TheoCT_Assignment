@@ -1,0 +1,37 @@
+#E-Commerce Shopping Cart
+
+# Initialize an empty list to store cart items
+cart = []
+
+# Function to add an item to the cart
+def add_item(item):
+    cart.append(item)
+    print(f"Added '{item}' to the cart.")
+
+# Function to remove an item from the cart
+def remove_item(item):
+    try:
+        cart.remove(item)
+        print(f"Removed '{item}' from the cart.")
+    except ValueError:
+        print(f"'{item}' is not in the cart.")
+
+# Function to show the items in the cart
+def show_cart():
+    if not cart:
+        print("Your cart is empty.")
+    else:
+        print("Items in your cart:")
+        for item in cart:
+            print(item)
+
+# Main loop to interact with the user
+while True:
+    user_input = input("Enter an item to add (or 'quit' to exit): ")
+    if user_input.lower() == "quit":
+        break
+    else:
+        add_item(user_input)
+
+# Display the final cart contents
+show_cart()
